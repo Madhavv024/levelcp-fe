@@ -1,5 +1,7 @@
 @use "./variables" as *;
 @use "./mixins" as *;
+@use "./responsive" as *;
+@use "./predefine" as *;
 
 /* Start About Us Area css
 ============================================================================================ */
@@ -29,6 +31,27 @@
 		}
 	}
 }
+
+.about_area {
+  position: relative; }
+  .about_area .main_title {
+    margin-bottom: 0px; }
+    .about_area .main_title p {
+      margin-bottom: 20px; }
+  .about_area .primary_btn {
+    margin-top: 20px; }
+  .about_area .about_img {
+    position: relative;
+    right: 250px; }
+    @media (max-width: 1480px) {
+      .about_area .about_img {
+        right: 0; }
+        .about_area .about_img img {
+          max-width: 100%;
+          height: auto; } }
+    @media (max-width: 991px) {
+      .about_area .about_img {
+        display: none; } }
 /* End About Us Area css
 ============================================================================================ */
 

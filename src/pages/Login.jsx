@@ -1,7 +1,9 @@
 import { useState } from "react"
 import api from "../api/axios"
 
+
 function Login() {
+  const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
@@ -13,7 +15,8 @@ function Login() {
     setError("")
 
     try {
-      const response = await api.post("/auth/login", {
+      const response = await api.post("/auth/register", {
+        userName: username,
         email,
         password,
       })
@@ -23,6 +26,7 @@ function Login() {
 
       // later → navigate to dashboard
       console.log("Login successful")
+      window.location.href = "/dashboard"
     } catch (err) {
       setError(err.response?.data?.message || "Login failed")
     } finally {
@@ -32,7 +36,7 @@ function Login() {
 
   const handleGoogleLogin = () => {
     // redirect to backend Google OAuth
-    //window.location.href = "http://localhost:8080/oauth2/authorization/google"
+    window.location.href = "http://localhost:8080/oauth2/authorization/google"
   }
 
   return (
@@ -41,6 +45,14 @@ function Login() {
         <h2>Login Page</h2>
 
         {error && <p className="error">{error}</p>}
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
 
         <input
           type="email"
@@ -66,7 +78,7 @@ function Login() {
 
         <button
           type="button"
-          className="google-btn"
+          className="google_btn"
           onClick={handleGoogleLogin}
         >
           Continue with Google

@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
+@use "./responsive" as *;
 
 //header_area css
 .header_area {
@@ -7,6 +8,13 @@
     width: 100%;
     z-index: 9999;
     background: #ffffff;
+    .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+    }
     .menu_nav {
         width: 100%;
     }

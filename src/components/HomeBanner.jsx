@@ -1,3 +1,5 @@
+import "../styles/_banner.scss"
+
 function HomeBanner() {
   return (
     <section className="home_banner_area">
@@ -7,15 +9,15 @@ function HomeBanner() {
             <div className="col-lg-7">
               <div className="banner_content">
                 <h3 className="text-uppercase">Hello</h3>
-                <h1 className="text-uppercase">I am Rahi Satner</h1>
-                <h5 className="text-uppercase">Senior WordPress Developer</h5>
+                <h2 className="text-uppercase">Welcome to Jabardast Coder</h2>
+                {/* <h5 className="text-uppercase">Senior WordPress Developer</h5> */}
                 <div className="d-flex align-items-center"
   style={{ display: "flex", alignItems: "center" }}>
-                  <a className="primary_btn" href="#">
-                    <span>Hire Me</span>
+                  <a className="primary_btn" href="\Login">
+                    <span>Login</span>
                   </a>
-                  <a className="primary_btn tr-bg" href="#">
-                    <span>Get CV</span>
+                  <a className="primary_btn tr-bg" href="\">
+                    <span>Sign Up</span>
                   </a>
                 </div>
               </div>

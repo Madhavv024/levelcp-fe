@@ -1,3 +1,6 @@
+import "../styles/_home.scss"
+
+
 function AboutSection() {
   return (
     <section className="about_area section_gap">

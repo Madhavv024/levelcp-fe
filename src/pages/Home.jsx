@@ -1,6 +1,7 @@
 import Header from "../components/Header"
 import HomeBanner from "../components/HomeBanner"
 import AboutSection from "../components/AboutSection"
+import Feature from "../components/Feature"
 import "../styles/_home.scss"
 
 function Home() {
@@ -9,9 +10,7 @@ function Home() {
       <Header />
       <HomeBanner />
       <AboutSection />
-      <div>
-        <h1>Welcome to the Home Page</h1>
-      </div>
+      <Feature />
     </>
     )
 

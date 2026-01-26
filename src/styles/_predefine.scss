@@ -1,3 +1,6 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
 .section_gap {
 	padding: 200px 0;
 	@media (max-width: 1199px) {

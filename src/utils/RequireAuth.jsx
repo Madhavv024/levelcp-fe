@@ -5,6 +5,7 @@ function RequireAuth() {
 
   // If token exists → allow access
   if (token) {
+    console.log("Token found:", token)
     return <Outlet />
   }
 
