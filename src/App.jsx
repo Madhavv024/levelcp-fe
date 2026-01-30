@@ -4,6 +4,7 @@ import Home from "./pages/Home.jsx"
 import Dashboard from "./pages/Dashboard.jsx"
 import RequireAuth from "./utils/RequireAuth.jsx"
 import MainLayout from "./layouts/MainLayout"
+import Problems from "./pages/Problems"
 
 function App() {
   return (
@@ -12,6 +13,10 @@ function App() {
         {/* Public */}
         <Route path="/Login" element={<Login />} />
         <Route path="/" element={<Home />} />
+         <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/problems" element={<Problems />} />
+    </Routes>
 
 
         {/* Protected */}
