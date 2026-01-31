@@ -37,9 +37,6 @@ function Problems() {
     </div>
   )
 }
-function Problems() {
-  return <h1>Problems Page Working</h1>
-}
 
 
 export default Problems

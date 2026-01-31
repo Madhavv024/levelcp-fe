@@ -15,7 +15,7 @@ function Login() {
     setError("")
 
     try {
-      const response = await api.post("/auth/register", {
+      const response = await api.post("/auth/login", {
         userName: username,
         email,
         password,
@@ -34,12 +34,31 @@ function Login() {
     }
   }
 
+  const handleRegister = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError("")
+    try {
+      const response = await api.post("/auth/register", {
+        userName: username,
+        email,
+        password
+      })
+      console.log("Registration successful", response.data)
+    } catch (err) {
+      setError(err.response?.data?.message || "Registration failed")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   const handleGoogleLogin = () => {
     // redirect to backend Google OAuth
     window.location.href = "http://localhost:8080/oauth2/authorization/google"
   }
 
   return (
+    <div className="container">
     <div className="login-container">
       <form onSubmit={handleLogin} className="login-form">
         <h2>Login Page</h2>
@@ -74,6 +93,10 @@ function Login() {
           {loading ? "Logging in..." : "Login"}
         </button>
 
+        <button type="button" onClick={handleRegister} disabled={loading}>
+          {loading ? "Registering..." : "Register"}
+        </button>
+
         <div className="divider">OR</div>
 
         <button
@@ -84,6 +107,7 @@ function Login() {
           Continue with Google
         </button>
       </form>
+    </div>
     </div>
   )
 }

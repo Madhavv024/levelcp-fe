@@ -1,3 +1,4 @@
+
 export async function fetchProblems(level, page) {
   // TEMP: mock data
   const allProblems = Array.from({ length: 40 }, (_, i) => ({
@@ -15,12 +16,4 @@ export async function fetchProblems(level, page) {
       resolve(allProblems.slice(start, end))
     }, 400)
   })
-}
-import axios from "axios"
-
-export async function fetchProblems(level, page) {
-  const response = await axios.get(
-    `/api/problems?level=${level}&page=${page}`
-  )
-  return response.data
 }

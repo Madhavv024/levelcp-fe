@@ -10,21 +10,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public */}
-        <Route path="/Login" element={<Login />} />
+
+        {/* Public routes */}
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
-         <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/problems" element={<Problems />} />
-    </Routes>
+        <Route path="/problems" element={<Problems />} />
 
-
-        {/* Protected */}
+        {/* Protected routes */}
         <Route element={<RequireAuth />}>
           <Route element={<MainLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
         </Route>
+
       </Routes>
     </BrowserRouter>
   )
