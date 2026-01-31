@@ -14,12 +14,12 @@ function App() {
         {/* Public routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
-        <Route path="/problems" element={<Problems />} />
 
         {/* Protected routes */}
         <Route element={<RequireAuth />}>
           <Route element={<MainLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/problems" element={<Problems />} />
           </Route>
         </Route>
 

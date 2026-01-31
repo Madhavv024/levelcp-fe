@@ -32,6 +32,18 @@
 	}
 }
 
+.toggle-mode {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.toggle-mode .link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
 .about_area {
   position: relative; }
   .about_area .main_title {
